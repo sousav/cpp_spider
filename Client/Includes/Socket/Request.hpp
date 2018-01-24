@@ -1,0 +1,16 @@
+#ifndef REQUEST_HPP_
+#define REQUEST_HPP_
+
+enum class Request : int
+{
+	SENDLINE = 1,
+	MOUSEINFO,
+	DUMP_COMPUTER_NAME,
+	DUMP_USER_NAME,
+	DUMP_SYS_DIR,
+	DUMP_USER_DIR,
+	STATUS,
+	EXEC
+};
+
+#endif /* REQUEST_HPP_ */

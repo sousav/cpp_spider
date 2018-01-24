@@ -1,0 +1,28 @@
+<nb-card _ngcontent-c32="" _nghost-c22="">
+<nb-card-header _ngcontent-c32="">Multiple Port Scanner</nb-card-header>
+    <nb-card-body _ngcontent-c32="">
+        <div _ngcontent-c43="" class="row show-grid">
+          <div _ngcontent-c43="" class="col-md-12">
+              <div _ngcontent-c32="" class="input-group">
+                    <input _ngcontent-c32="" class="form-control" id="domain" placeholder="Host" type="text" #ip>
+              </div>
+          </div>
+
+      </div>
+      <br>
+      <div style="display:none;margin-left: auto;
+  margin-right: auto;" #loading>
+          <img src="http://fr.hotelmonport.com/static/images/ico/loader.gif" style="width : 5%;">
+      </div>
+      <div _ngcontent-c23="" class="alert alert-hint" role="alert" style="display:none;" #portScannerAlert>
+          Port : <strong>
+            <h5 _ngcontent-c23="" class="text-body">
+          <div [innerHTML]="PortScannerResult">
+          </div>
+          </h5>
+      </strong>
+      </div>
+      <br>
+      <button _ngcontent-c34="" class="btn btn-hero-danger btn-warning" (click)="scanMultiplePort()" style="float: none; margin: 0 auto;" #scanMultiplePortButton>Scan</button>
+    </nb-card-body>
+</nb-card>

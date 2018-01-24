@@ -1,0 +1,64 @@
+<nb-card>
+        <nb-card-header>Client map</nb-card-header>
+        <nb-card-body>
+                <div echarts [options]="options" class="echarts"></div>
+        </nb-card-body>
+</nb-card>
+
+<nb-card _ngcontent-c32="" _nghost-c22="">
+<nb-card-header _ngcontent-c32="">Dashboard</nb-card-header>
+<nb-card-body _ngcontent-c32="">
+
+
+        <table class="table table-condensed" style="margin-top:1%">
+                <thead>
+                        <tr>
+                                <th>STATUS</th>
+                                <th>COUNTRY</th>
+                                <th>IP</th>
+                                <th>NAME</th>
+                                <th>LOG</th>
+                                <th>CONSOLE</th>
+                                <th>INFO</th>
+                                <th colspan="2" style="text-align:center;">ACTION</th>
+                        </tr>
+                </thead>
+                <tbody>
+                        <tr *ngFor="let item of tableInfo; let rowIndex = index">
+                                        <td style="text-align:center;">
+                                                <div *ngIf="item.status == 1;">
+                                                        <div class="fa fa-eercast fa-2x" style="color:#42d642;"></div>
+                                                </div>
+                                                <div *ngIf="item.status == 0;">
+                                                        <i class="fa fa-eercast fa-2x" style="color:red;"></i>
+                                                </div>
+                                        </td>
+                                <td><img src="" class="flag flag-{{ item.countryCode }}" alt="" /></td>
+                                <td>{{ item.ip }}</td>
+                                <td>{{ item.name }}</td>
+                                <td><button class="btn btn-primary" (click)="showLogModal(item)">Open Log</button></td>
+                                <td><button class="btn btn-primary" (click)="showConsoleModal(item)">Open Console</button></td>
+                                <td>
+                                    <button class="btn btn-primary" (click)="showInfoModal(item)">
+                                        <i _ngcontent-c17="" class="ion-clipboard fa-1x"></i>
+                                    </button>
+                                    <button class="btn btn-primary" (click)="showMouseModal(item)">
+                                        <i _ngcontent-c17="" class="ion-mouse fa-1x"></i>
+                                    </button>
+                                </td>
+                                <td>
+                                        <div *ngIf="item.status == 0;">
+                                                <div class = "fa fa-play" style="margin: auto; padding: 10px;" (click)="clicked(item.id)"> </div>
+                                        </div>
+                                        <div *ngIf="item.status == 1">
+                                                <div class = "fa fa-pause" style="margin: auto; padding: 10px;" (click)="clicked(item.id)"> </div>
+                                        </div>
+                                </td>
+                                <td>
+                                <a class="ng2-smart-action ng2-smart-action-delete-delete" (click)="deleteRow(rowIndex, item.name)" ><i class="fa fa-trash fa-1x" style="margin: auto; padding: 10px;"></i></a>
+                                 </td>
+                        </tr>
+                </tbody>
+        </table>
+ </nb-card-body>
+</nb-card>

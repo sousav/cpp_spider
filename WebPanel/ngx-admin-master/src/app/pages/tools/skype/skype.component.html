@@ -1,0 +1,24 @@
+<nb-card _ngcontent-c32="" _nghost-c22="">
+<nb-card-header _ngcontent-c32="">Skype Resolver</nb-card-header>
+<nb-card-body _ngcontent-c32="">
+    <div _ngcontent-c43="" class="row show-grid">
+      <div _ngcontent-c43="" class="col-md-12">
+          <div _ngcontent-c32="" class="input-group">
+                <input _ngcontent-c32="" class="form-control" id="skype" placeholder="Username" type="text" #username>
+          </div>
+      </div>
+
+    </div>
+    <br>
+     <div #usernameD>
+         <div _ngcontent-c23="" class="alert alert-success" role="alert" style="display:none;" #usernameAlert>
+             IP: <strong _ngcontent-c23="">  {{ SkypeResolved }} .</strong>
+         </div>
+         <div _ngcontent-c23="" class="alert alert-danger" role="alert" style="display:none;" #usernameAlertError>
+             IP: <strong _ngcontent-c23="">  {{ SkypeResolved }} .</strong>
+         </div>
+    </div>
+
+    <button _ngcontent-c34="" class="btn btn-hero-danger btn-demo" (click)="resolveSkype()" style="float: none; margin: 0 auto;" #usernameButton>Resolve</button>
+  </nb-card-body>
+</nb-card>

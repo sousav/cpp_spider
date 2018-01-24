@@ -1,0 +1,84 @@
+<nb-card _ngcontent-c32="" _nghost-c22="">
+<nb-card-header _ngcontent-c32="">Domain IP history</nb-card-header>
+<nb-card-body _ngcontent-c32="">
+    <div _ngcontent-c43="" class="row show-grid">
+      <div _ngcontent-c43="" class="col-md-12">
+          <div _ngcontent-c32="" class="input-group">
+                <input _ngcontent-c32="" class="form-control" id="domain" placeholder="Domain name" type="text" #domainList>
+          </div>
+      </div>
+
+    </div>
+    <br>
+     <div #domainListD>
+         <div _ngcontent-c23=""  style="display:none;" #domainListAlert>
+             <!-- <table class="table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>IP</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <div *ngFor="let item of DomainTableInfos;">
+                    <tr>
+                      <td>{{ item.date }}</td>
+                      <td>{{ item.ip}}</td>
+                    </tr>
+                  </div>
+              </tbody>
+            </table> -->
+
+            <table class="table table-condensed" style="margin-top:1%">
+                    <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>IP</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let item of DomainTableInfos">
+                      <td>{{ item.date }}</td>
+                      <td>{{ item.ip }}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+         </div>
+         <div _ngcontent-c23="" class="alert alert-danger" role="alert" style="display:none;" #domainListAlertError>
+             Domain : <strong _ngcontent-c23="">  {{ DomainIPList }} .</strong>
+         </div>
+    </div>
+
+    <button _ngcontent-c34="" class="btn btn-hero-danger btn-demo" (click)="getDomainList()" style="float: none; margin: 0 auto;" #domainListButton>Resolve</button>
+  </nb-card-body>
+</nb-card>
+
+
+<nb-card _ngcontent-c32="" _nghost-c22="">
+<nb-card-header _ngcontent-c32="">Domain Whois</nb-card-header>
+<nb-card-body _ngcontent-c32="">
+    <div _ngcontent-c43="" class="row show-grid">
+      <div _ngcontent-c43="" class="col-md-12">
+          <div _ngcontent-c32="" class="input-group">
+                <input _ngcontent-c32="" class="form-control" id="domain" placeholder="Domain name" type="text" #domainWhois>
+          </div>
+      </div>
+
+    </div>
+    <br>
+     <div #domainWhois>
+         <div _ngcontent-c23=""  style="display:none;" #domainWhoisAlert>
+
+         </div>
+         <div _ngcontent-c23="" class="alert alert-hint" role="alert" style="display:none;" #domainWhoistAlertError>
+
+               <h5 _ngcontent-c23="" class="text-body">
+             <div [innerHTML]="DomainIPWhois">
+             </div>
+             </h5>
+         </div>
+    </div>
+
+    <button _ngcontent-c34="" class="btn btn-hero-danger btn-demo" (click)="getDomainWhois()" style="float: none; margin: 0 auto;" #domainWhoisButton>Resolve</button>
+  </nb-card-body>
+</nb-card>

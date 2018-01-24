@@ -1,0 +1,92 @@
+    <nb-card _ngcontent-c32="" _nghost-c22="">
+
+
+
+
+    <nb-card-header _ngcontent-c32="">DDoS Attack</nb-card-header>
+    <nb-card-body _ngcontent-c32="">
+        <div _ngcontent-c43="" class="row show-grid">
+          <div _ngcontent-c43="" class="col-md-7">
+              <div _ngcontent-c32="" class="input-group">
+                    <input _ngcontent-c32="" class="form-control" id="ip" placeholder="IP" type="text" #ip>
+              </div>
+          </div>
+          <div _ngcontent-c43="" class="col-md-2">
+              <div _ngcontent-c32="" class="input-group">
+                <input _ngcontent-c32="" class="form-control" id="port" placeholder="Port" type="text" #port>
+              </div>
+          </div>
+          <div _ngcontent-c43="" class="col-md-3">
+              <div _ngcontent-c32="" class="input-group">
+                <input _ngcontent-c32="" class="form-control" id="time" placeholder="Time" type="text" #time>
+              </div>
+          </div>
+        </div>
+
+        <br>
+        <button _ngcontent-c34="" [disabled]='attackStart' class="btn btn-hero-danger btn-demo" (click)="doAttack($event)" style="float: none; margin: 0 auto;" #button>Attack</button>
+      </nb-card-body>
+
+
+
+  </nb-card>
+
+<nb-layout-column _ngcontent-c0="" class="main-content">
+
+
+      <div _ngcontent-52 class="row show-grid">
+
+      <nb-card _ngcontent-52="" _nghost-c22="" class="col-lg-6">
+        <nb-card-header _ngcontent-52="">DNS Resolver</nb-card-header>
+        <nb-card-body _ngcontent-52="">
+            <div class="row">
+                <div _ngcontent-52="" class="input-group">
+                      <input _ngcontent-52="" class="form-control" id="ip" placeholder="Domain" type="text" #dns>
+
+                </div>
+
+            </div>
+            <br>
+            <div #resolvedns>
+                <div _ngcontent-c23="" class="alert alert-success" role="alert" style="display:none;" #messageResolvedDns>
+                    <strong _ngcontent-c23=""> IP : </strong> {{ IpResolved }} .
+                </div>
+            </div>
+            <br>
+            <button _ngcontent-c34="" class="btn btn-hero-primary btn-demo" (click)="resolveDns()" style="float: none; margin: 0 auto;" >Resolve</button>
+        </nb-card-body>
+      </nb-card>
+
+        <nb-card _ngcontent-52="" _nghost-c22="" class="col-lg-5" style="left: 2%;">
+          <nb-card-header _ngcontent-52="">Port Scanner</nb-card-header>
+          <nb-card-body _ngcontent-52="">
+              <div class="row" >
+                  <div _ngcontent-c43="" class="col-md-8">
+                  <div _ngcontent-52="" class="input-group">
+                        <input _ngcontent-52="" class="form-control" id="ip" placeholder="IP" type="text" #_sp_ip>
+
+                  </div>
+                  </div>
+                  <div _ngcontent-c43="" class="col-md-4">
+                  <div _ngcontent-52="" class="input-group">
+                        <input _ngcontent-52="" class="form-control" id="ip" placeholder="Port" type="text" #sport>
+
+                  </div>
+                  </div>
+              </div>
+              <br>
+              <div #scanport>
+
+                  <div _ngcontent-c23="" class="alert alert-success" role="alert" style="display:none;" #messageScanPortOpen>
+                      The port is :<strong _ngcontent-c23="">  {{ PortResolved }} .</strong>
+                  </div>
+                  <div _ngcontent-c23="" class="alert alert-danger" role="alert" style="display:none;" #messageScanPortClose>
+                      The port is :<strong _ngcontent-c23="">  {{ PortResolved }} .</strong>
+                  </div>
+              </div>
+              <br>
+              <button _ngcontent-c34="" class="btn btn-hero-info btn-demo" (click)="scanPort()" style="float: none; margin: 0 auto;" >Scan</button>
+          </nb-card-body>
+        </nb-card>
+    </div>
+</nb-layout-column>
